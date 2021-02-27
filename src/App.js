@@ -3,8 +3,6 @@ import { useImmerReducer} from 'use-immer'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Axios from 'axios'
 
-import './App.css'
-
 import StateContext from './StateContext'
 import DispatchContext from './DispatchContext'
 

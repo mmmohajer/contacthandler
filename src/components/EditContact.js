@@ -470,7 +470,7 @@ const EditContact = ({ history }) => {
        			</div>
 
 	            <div className="form-group">
-	            <input onChange = { e => dispatch({type: "phoneCallImmediately", value: e.target.checked}) } type="checkbox" id="receive-email" name="receive-email" className="form-checkbox" checked = { state.email_receive.value ? true : false}/>
+	            <input onChange = { e => dispatch({type: "emailRecieveImmediately", value: e.target.checked}) } type="checkbox" id="receive-email" name="receive-email" className="form-checkbox" checked = { state.email_receive.value ? true : false}/>
 	            <label htmlFor="receive-email" className="checkbox-label">
 	                	<small>Receive emails from us?</small>
 	            </label>

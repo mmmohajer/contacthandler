@@ -41,12 +41,14 @@ const Home = () => {
 
 	const deleteHandler = async (contactId) => {
 		let result = window.confirm("Are you sure to delete?")
-		try {
-			const response = await Axios.post(`/contacts/delete/${contactId}`, [] ,{ headers })
-			appDispatch({type: "flashMessage", value: "Your contact information has been successfully deleted!"})
-			setContacts((prev) => prev.filter(contact => contact.id !== contactId))
-		} catch (err) {
-			console.log(err)
+		if (result) {
+			try {
+				const response = await Axios.post(`/contacts/delete/${contactId}`, [] ,{ headers })
+				appDispatch({type: "flashMessage", value: "Your contact information has been successfully deleted!"})
+				setContacts((prev) => prev.filter(contact => contact.id !== contactId))
+			} catch (err) {
+				console.log(err)
+			}
 		}
 	}
 
